@@ -11,11 +11,7 @@ using namespace std::chrono;
 // tiled matrix multiplication
 void tiled_matmul(std::vector<float>& A, std::vector<float>& B, std::vector<float>& C,std::size_t N, std::size_t blk_size) 
 {
-    // Initialize output matrix C to zero.
-    std::fill(C.begin(), C.end(), 0.0);
-
     std::size_t blks=N/blk_size;
-
     // parallel loop over each individual block
     hpx::experimental::for_loop(hpx::execution::par, 0, blks, [&](std::size_t bi) {
         for (auto bj=0; bj<blks; bj++)
