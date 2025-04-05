@@ -41,7 +41,7 @@ int main(){
     std::size_t N = 1024; 
     std::size_t blk_size = 32;
 
-    // Matrix initialization
+    // Matrix init
     std::vector<float> A(N*N, 1.0); 
     std::vector<float> B(N*N, 2.0); 
     std::vector<float> C(N*N, 0.0); 
